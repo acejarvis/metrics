@@ -19,7 +19,7 @@ export default async function({login, q, imports, data, account}, {enabled = fal
 
     //Querying api and format result (https://wakatime.com/developers#stats)
     console.debug(`metrics/compute/${login}/plugins > wakatime > querying api`)
-    const {data:{data:stats}} = await imports.axios.get(`${url}/api/v1/users/${user}/stats/${range}?api_key=${token}`)
+    const {data:{data:stats}} = await imports.axios.get(`${url}/api/v1/users/current/stats/${range}?api_key=${token}`)
     const result = {
       sections,
       days,
